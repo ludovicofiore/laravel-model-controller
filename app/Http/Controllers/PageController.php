@@ -27,4 +27,14 @@ class PageController extends Controller
         return view('contacts');
 
     }
+
+    public function orderMovies(){
+
+        // query per film ordinati per voto
+        $movies= Movie::orderBy('vote')->get();
+
+
+        return view('orderMovies', compact('movies'));
+
+    }
 }
