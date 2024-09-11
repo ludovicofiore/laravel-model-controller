@@ -1,21 +1,33 @@
 {{-- questa view estende il file main.blade.php che è dentro la cartella view/layouts --}}
 @extends('layouts.main')
 
-@section('hero')
-    <div>HERO HOME</div>
-@endsection
+
 
 
 
 @section('content')
     <div class="container my-5">
-        <h1>Title</h1>
+        <h1>home</h1>
 
-        <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, molestiae? Assumenda vero necessitatibus
-            qui sequi, dolorum sed eligendi praesentium magni quibusdam labore doloribus harum, quaerat officia voluptatum
-            atque, placeat numquam?
-        </p>
+        <div class="container d-flex flex-wrap">
+
+            @foreach ($movies as $movie)
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ $movie->title }}</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">{{ $movie->original_title }}</h6>
+                        <p class="card-text">{{ $movie->nationality }}
+                        </p>
+                        <h6>{{ $movie->date }}</h6>
+                        <h5>{{ $movie->vote }}</h5>
+
+                    </div>
+                </div>
+            @endforeach
+
+
+        </div>
+
     </div>
 @endsection
 
