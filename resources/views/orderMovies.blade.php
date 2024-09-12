@@ -1,4 +1,4 @@
-@extends('layouts.main')
+{{-- @extends('layouts.main')
 
 @section('content')
     <div class="container my-5">
@@ -29,4 +29,4 @@
 
 @section('titlePage')
     order
-@endsection
+@endsection --}}

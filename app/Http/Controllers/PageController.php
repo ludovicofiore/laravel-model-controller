@@ -9,10 +9,12 @@ class PageController extends Controller
 {
     public function index(){
 
+        $title= 'Home';
+
         $movies= Movie::all();
 
         // dd($movies);
-        return view('home', compact('movies'));
+        return view('home', compact('movies', 'title'));
 
     }
 
@@ -30,11 +32,13 @@ class PageController extends Controller
 
     public function orderMovies(){
 
+        $title= 'film ordinati';
+
         // query per film ordinati per voto
         $movies= Movie::orderBy('vote')->get();
 
 
-        return view('orderMovies', compact('movies'));
+        return view('home', compact('movies', 'title'));
 
     }
 }
